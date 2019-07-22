@@ -7,67 +7,78 @@
 //
 
 import UIKit
-import Vision
-import AVFoundation
 
-class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate  {
+class ViewController: UIViewController {
     
-    let session = AVCaptureSession()
-    var previewLayer: AVCaptureVideoPreviewLayer!
-    var takePhoto = false;
-    
-    let dataOutputQueue = DispatchQueue(
-        label: "video data queue",
-        qos: .userInitiated,
-        attributes: [],
-        autoreleaseFrequency: .workItem)
+    @IBOutlet weak var textField: UITextView!
+    @IBOutlet weak var ingredientField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureCaptureSession()
-        session.startRunning()
+        ingredientField.delegate = self
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func configureCaptureSession() {
-        guard let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
-            fatalError("Couldn't find camera")
-        }
-        
-        do {
-            let cameraInput = try AVCaptureDeviceInput(device: camera)
-            session.addInput(cameraInput)
-        }
-            
-        catch {
-            fatalError(error.localizedDescription)
-        }
-        
-        let videoOutput = AVCaptureVideoDataOutput()
-        
-        videoOutput.setSampleBufferDelegate(self as AVCaptureVideoDataOutputSampleBufferDelegate, queue: dataOutputQueue)
-        
-        videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA]
-        
-        // Add the video output to the capture session
-        session.addOutput(videoOutput)
-        
-        let videoConnection = videoOutput.connection(with: .video)
-        
-        videoConnection?.videoOrientation = .portrait
-        // Configure the preview layer
-        
-        previewLayer = AVCaptureVideoPreviewLayer(session: session)
-        previewLayer.videoGravity = .resizeAspectFill
-        previewLayer.frame = view.bounds
-        view.layer.insertSublayer(previewLayer, at: 0)
-        
-        let queue = DispatchQueue(label: "com.archishamajee.captureQueue")
-        videoOutput.setSampleBufferDelegate(self, queue:queue)
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
-    func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        // get image from sample buffer
+    @IBAction func enterTapped(_ sender: Any) {
+        let ingredients = ["gluconlactone": "good chemical exfoliator ",
+            "glycolic acid": "good chemical exfoliator",
+            "salicylic acid": "good chemical exfoliator",
+            "tocopherol": "good vitamin e",
+            "tocopherol acetate": "good vitamin e",
+            "ceramide 1": "good block water evaporation",
+            "ceramide 3": "good block water evaporation",
+            "ceramide 9": "good promotes skin lipid",
+            "1,4-Dioxane": "bad shown to be toxic",
+            "acrylates": "bad shown to be toxic",
+            "benzophenone": "bad shown to be toxic",
+            "butylated hydroxyanisole" : "bad shown to be toxic",
+            "carbon black": "bad shown to be toxic",
+            "ethanolamines": "bad shown to be toxic",
+            "formaldehyde": "bad shown to be toxic",
+            "niacinamide": "good vitamin B skin clearing",
+            "capric triglyceride": "good moisture barrier",
+            "sodium laurel sulfate": "bad strips moisture",
+            "DEA": "bad shown to be toxic",
+            "Diethanolamine": "bad shown to be toxic",
+            "lanolin": "good moisturizer",
+            "phthalates": "bad shown to be toxic",
+            "proplyparaben": "bad shown to be toxic",
+            "butylparaben": "bad shown to be toxic",
+            "dimethicone": "bad silicone blocks moisture",
+            "stearic acid": "neutral",
+            "sodium tallowate": "neutral",
+            "lauric acid": "neutral",
+            "sodium isethionate": "neutral"]
+        
+        var check = ingredientField.text?.split(separator: ",")
+        for string in check! {
+            print(string)
+            for (key,value) in ingredients {
+                if (string.contains(key)) {
+                    textField.text = key + ": " + value
+                    continue
+                }
+            }
+        }
+        //textField.text = "Ingredient: \(ingredientField.text!)\n"
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        ingredientField.resignFirstResponder()
     }
 }
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+
+
 

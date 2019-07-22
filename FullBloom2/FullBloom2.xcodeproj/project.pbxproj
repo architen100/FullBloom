@@ -3,19 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		296BCAFD22E3ECEB00C0C9FA /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296BCAFC22E3ECEB00C0C9FA /* Ingredient.swift */; };
 		29C3D06C22E3DBD700606F7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C3D06B22E3DBD700606F7D /* AppDelegate.swift */; };
 		29C3D06E22E3DBD700606F7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C3D06D22E3DBD700606F7D /* ViewController.swift */; };
 		29C3D07122E3DBD700606F7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C3D06F22E3DBD700606F7D /* Main.storyboard */; };
 		29C3D07422E3DBD800606F7D /* FullBloom2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29C3D07222E3DBD700606F7D /* FullBloom2.xcdatamodeld */; };
 		29C3D07622E3DBD900606F7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C3D07522E3DBD900606F7D /* Assets.xcassets */; };
 		29C3D07922E3DBD900606F7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C3D07722E3DBD900606F7D /* LaunchScreen.storyboard */; };
+		29C3D08222E3E41D00606F7D /* cosmetics.json in Resources */ = {isa = PBXBuildFile; fileRef = 29C3D08122E3E41D00606F7D /* cosmetics.json */; };
+		54705F7B05197305AA0F52F0 /* Pods_FullBloom2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43C699692BBCB8CBA3CF5B3 /* Pods_FullBloom2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19E67ACF07676012F6AA4BF0 /* Pods-FullBloom2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullBloom2.release.xcconfig"; path = "Target Support Files/Pods-FullBloom2/Pods-FullBloom2.release.xcconfig"; sourceTree = "<group>"; };
+		296BCAFC22E3ECEB00C0C9FA /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		29C3D06822E3DBD700606F7D /* FullBloom2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FullBloom2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C3D06B22E3DBD700606F7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29C3D06D22E3DBD700606F7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +29,9 @@
 		29C3D07522E3DBD900606F7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29C3D07822E3DBD900606F7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29C3D07A22E3DBD900606F7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29C3D08122E3E41D00606F7D /* cosmetics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cosmetics.json; path = ../../cosmetics.json; sourceTree = "<group>"; };
+		BA08EB84A11511BA7555A0B5 /* Pods-FullBloom2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullBloom2.debug.xcconfig"; path = "Target Support Files/Pods-FullBloom2/Pods-FullBloom2.debug.xcconfig"; sourceTree = "<group>"; };
+		C43C699692BBCB8CBA3CF5B3 /* Pods_FullBloom2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FullBloom2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54705F7B05197305AA0F52F0 /* Pods_FullBloom2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10008C0A767B028881298753 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA08EB84A11511BA7555A0B5 /* Pods-FullBloom2.debug.xcconfig */,
+				19E67ACF07676012F6AA4BF0 /* Pods-FullBloom2.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		29C3D05F22E3DBD700606F7D = {
 			isa = PBXGroup;
 			children = (
 				29C3D06A22E3DBD700606F7D /* FullBloom2 */,
 				29C3D06922E3DBD700606F7D /* Products */,
+				10008C0A767B028881298753 /* Pods */,
+				D8B6547DC622FA67448A7CAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +76,7 @@
 		29C3D06A22E3DBD700606F7D /* FullBloom2 */ = {
 			isa = PBXGroup;
 			children = (
+				29C3D08122E3E41D00606F7D /* cosmetics.json */,
 				29C3D06B22E3DBD700606F7D /* AppDelegate.swift */,
 				29C3D06D22E3DBD700606F7D /* ViewController.swift */,
 				29C3D06F22E3DBD700606F7D /* Main.storyboard */,
@@ -63,8 +84,17 @@
 				29C3D07722E3DBD900606F7D /* LaunchScreen.storyboard */,
 				29C3D07A22E3DBD900606F7D /* Info.plist */,
 				29C3D07222E3DBD700606F7D /* FullBloom2.xcdatamodeld */,
+				296BCAFC22E3ECEB00C0C9FA /* Ingredient.swift */,
 			);
 			path = FullBloom2;
+			sourceTree = "<group>";
+		};
+		D8B6547DC622FA67448A7CAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C43C699692BBCB8CBA3CF5B3 /* Pods_FullBloom2.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29C3D07D22E3DBD900606F7D /* Build configuration list for PBXNativeTarget "FullBloom2" */;
 			buildPhases = (
+				8BFA29B9AF0A5CFFE7A2AC6A /* [CP] Check Pods Manifest.lock */,
 				29C3D06422E3DBD700606F7D /* Sources */,
 				29C3D06522E3DBD700606F7D /* Frameworks */,
 				29C3D06622E3DBD700606F7D /* Resources */,
+				84C2186693566DE64AF3AB1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C3D08222E3E41D00606F7D /* cosmetics.json in Resources */,
 				29C3D07922E3DBD900606F7D /* LaunchScreen.storyboard in Resources */,
 				29C3D07622E3DBD900606F7D /* Assets.xcassets in Resources */,
 				29C3D07122E3DBD700606F7D /* Main.storyboard in Resources */,
@@ -133,11 +166,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		84C2186693566DE64AF3AB1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FullBloom2/Pods-FullBloom2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FullBloom2/Pods-FullBloom2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FullBloom2/Pods-FullBloom2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BFA29B9AF0A5CFFE7A2AC6A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FullBloom2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		29C3D06422E3DBD700606F7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296BCAFD22E3ECEB00C0C9FA /* Ingredient.swift in Sources */,
 				29C3D06E22E3DBD700606F7D /* ViewController.swift in Sources */,
 				29C3D06C22E3DBD700606F7D /* AppDelegate.swift in Sources */,
 				29C3D07422E3DBD800606F7D /* FullBloom2.xcdatamodeld in Sources */,
@@ -284,6 +360,7 @@
 		};
 		29C3D07E22E3DBD900606F7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA08EB84A11511BA7555A0B5 /* Pods-FullBloom2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +379,7 @@
 		};
 		29C3D07F22E3DBD900606F7D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19E67ACF07676012F6AA4BF0 /* Pods-FullBloom2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
